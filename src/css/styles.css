@@ -1,0 +1,15 @@
+:root { 
+    --fraunces-font-family: 'Fraunces', serif;
+    --manrope-font-family: 'Manrope', sans-serif;  
+}
+
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
