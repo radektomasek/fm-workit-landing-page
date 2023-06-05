@@ -1,6 +1,25 @@
+@font-face {
+    font-family: 'Fraunces144';
+    src: url('../../assets/Fraunces_144pt-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('../../assets/Manrope-Regular.ttf');
+}
+
 :root { 
-    --fraunces-font-family: 'Fraunces', serif;
-    --manrope-font-family: 'Manrope', sans-serif;  
+    --fraunces-font-family: 'Fraunces144', serif;
+    --manrope-font-family: 'Manrope', sans-serif;
+
+    --dark-purple-color: hsl(273, 85%, 13%);
+    --eucalyptus-color: hsl(150, 100%, 63%);
+    --davy-grey-color: hsl(271, 12%, 34%);
+    --ghost-white-color: hsl(276, 100%, 99%);
+    --white-color: hsl(0, 0%, 100%);
+
+    --button-width: 11.875rem;
+    --button-height: 3.8125rem;
 }
 
 
@@ -12,4 +31,83 @@ html {
 *::before,
 *::after {
     box-sizing: inherit;
+}
+
+body {
+    font-family: 'Manrope';
+    font-size: 1.125rem;
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    font-family: var(--fraunces-font-family);
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 5rem;
+    line-height: 1;
+}
+
+h2 {
+    font-size: 3.5rem;
+    line-height: 1.143;
+}
+
+h3 {
+    font-size: 2rem;
+    line-height: 1.25;
+}
+
+a {
+    color: var(--white-color);
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: -0.01125em;
+}
+
+.button--primary {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    justify-content: center;
+    width: var(--button-width);
+    height: var(--button-height);
+    color: var(--dark-purple-color);
+    background: var(--eucalyptus-color);
+}
+
+.button--primary:hover {
+    color: var(--eucalyptus-color); 
+    background: var(--dark-purple-color);
+    border: 3px solid var(--eucalyptus-color);
+}
+
+.button--secondary, 
+.hero__heading span {
+    display: inline-block;
+    border-bottom: 4px solid var(--eucalyptus-color);
+    
+}
+
+
+.button--secondary:hover {
+    color: var(--eucalyptus-color); 
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--dark-purple-color);
+    padding: 1rem;
+}
+
+.hero {
+    background-color: var(--dark-purple-color);
+    color: var(--white-color);
+    padding: 1rem;
 }
