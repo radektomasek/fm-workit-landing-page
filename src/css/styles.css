@@ -18,8 +18,23 @@
     --ghost-white-color: hsl(276, 100%, 99%);
     --white-color: hsl(0, 0%, 100%);
 
-    --button-width: 11.875rem;
-    --button-height: 3.8125rem;
+    --button-width: 8.3125rem;
+    --button-height: 3.4375rem;
+
+    --heading-large-size: 3.125rem;
+    --heading-large-line: 1;
+
+    --heading-medium-size: 2rem;
+    --heading-medium-line: 1.5;
+
+    --heading-small-size: 1.75rem;
+    --heading-small-line: 1.29;
+
+    --paragraph-size: 1rem;
+    --paragraph-line: 1.75;
+
+    --link-size: 1rem;
+    --link-line: 2;
 }
 
 
@@ -49,21 +64,23 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: 5rem;
-    line-height: 1;
+    font-size: var(--heading-large-size);
+    line-height: var(--heading-large-line);
 }
 
 h2 {
-    font-size: 3.5rem;
-    line-height: 1.143;
+    font-size: var(--heading-medium-size);
+    line-height: var(--heading-medium-line);
 }
 
 h3 {
-    font-size: 2rem;
-    line-height: 1.25;
+    font-size: var(--heading-small-size);
+    line-height: var(--heading-small-line);
 }
 
 a {
+    font-size: var(--link-size);
+    line-height: var(--link-line);
     color: var(--white-color);
     text-decoration: none;
     font-weight: 700;
@@ -103,11 +120,73 @@ a {
     display: flex;
     justify-content: space-between;
     background-color: var(--dark-purple-color);
-    padding: 1rem;
+    padding: 2rem 1rem 4rem 1rem;
 }
 
 .hero {
     background-color: var(--dark-purple-color);
     color: var(--white-color);
     padding: 1rem;
+    height: 22.0425rem;
+    text-align: center;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    display: block;
+    position: absolute;
+    background: var(--dark-purple-color);
+    width: 100%;
+    height: 6.25rem;
+    left: 0;
+    bottom: 30;
+    border-radius: 50%;
+    transform: scale(2);
+    z-index: 10;
+}
+
+.hero__button {
+    margin: 2.5rem;
+    position: relative;
+    z-index: 1000;
+}
+
+.hero__image {
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    bottom: -110;
+    width: 20rem;
+    height: auto;
+    z-index: 100;
+}
+
+.insights {
+    z-index: -1;
+    padding-top: 10rem;
+    background: var(--ghost-white-color);
+}
+
+@media screen and (min-width: 90em) {
+    :root {
+        --button-width: 11.875rem;
+        --button-height: 3.8125rem;
+
+        --heading-large-size: 5rem;
+        --heading-large-line: 1;
+    
+        --heading-medium-size: 3.5rem;
+        --heading-medium-line: 1.143;
+    
+        --heading-small-size: 2rem;
+        --heading-small-line: 1.25;
+    
+        --paragraph-size: 1.125rem;
+        --paragraph-line: 1.8;
+
+        --link-size: 1rem;
+        --link-line: 2;
+    }
 }
