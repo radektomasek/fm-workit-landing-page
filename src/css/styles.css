@@ -95,8 +95,9 @@ a {
     align-items: center;
     text-decoration: none;
     justify-content: center;
-    width: var(--button-width);
-    height: var(--button-height);
+    padding: 0.75rem 1.5rem;
+    /* width: var(--button-width);
+    height: var(--button-height); */
     color: var(--dark-purple-color);
     background: var(--eucalyptus-color);
 }
@@ -136,6 +137,7 @@ a {
 }
 
 .hero::after {
+    overflow-x: hidden;
     content: "";
     display: block;
     position: absolute;
@@ -223,6 +225,7 @@ a {
     margin: 0 auto;
     text-align: center;
     margin-top: 30rem;
+    padding: 2rem;
 }
 
 .offer__avatar {
@@ -233,6 +236,38 @@ a {
     top: -60%;
     transform: translateX(-50%);
     z-index: -1;
+}
+
+.offer__paragraph {
+    margin: 1rem 0 1.5rem 0;
+}
+/* 
+.offer__heading {
+    
+} */
+
+.footer {
+    display: flex;
+    width: 100vw;
+    height: 250px;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 7.25rem;
+    height: 6.38rem;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.footer__social {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 @media screen and (min-width: 90em) {
