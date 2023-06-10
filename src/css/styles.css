@@ -18,12 +18,15 @@
     --ghost-white-color: hsl(276, 100%, 99%);
     --white-color: hsl(0, 0%, 100%);
 
-    --hero-section-height: 22.0425rem;
-    --offer-section-height: 23.4375rem;
-    --offer-section-width: 21.4375rem;    
+    --header-max-width-wrapper: 21.4375rem; 
+    --hero-max-width-wrapper: 21.4375rem;
+    --offer-max-width-wrapper: 21.4375rem;
+
+    --hero-section-height: 26rem;
+    --offer-section-height: 37.6875rem;
+    --offer-box-width: 21.4375rem;
     --phone-image-width: 20rem;
     --avatar-picture-width: 17.65625rem;
-    --footer-height: 12.625rem;
 
     --heading-large-size: 3.125rem;
     --heading-large-line: 1;
@@ -107,7 +110,8 @@ a {
 .button--primary:hover {
     color: var(--eucalyptus-color); 
     background: var(--dark-purple-color);
-    border: 3px solid var(--eucalyptus-color);
+    border: 2px solid var(--eucalyptus-color);
+    padding: 0.65rem 1.4rem;
 }
 
 .button--secondary, 
@@ -123,18 +127,24 @@ a {
 }
 
 .header {
+    background-color: var(--dark-purple-color);
+}
+
+.header__wrapper {
     display: flex;
     justify-content: space-between;
-    background-color: var(--dark-purple-color);
-    padding: 2rem 1rem 4rem 1rem;
+    max-width: var(--header-max-width-wrapper);
+    margin: 0 auto;
+    padding: 2rem 1rem 0 1rem;
+
 }
 
 /* Hero styles */
 .hero {
+    padding: 4rem 0 0 0;
     background-color: var(--dark-purple-color);
     color: var(--white-color);
     height: var(--hero-section-height);
-    padding: 1rem;
     text-align: center;
     position: relative;
 }
@@ -154,8 +164,13 @@ a {
     z-index: 10;
 } */
 
+.hero__wrapper {
+    max-width: var(--hero-max-width-wrapper);
+    margin: 0 auto;
+}
+
 .hero__button {
-    margin: 2.5rem;
+    margin: 2.5rem 2.5rem 0 2.5rem;
     position: relative;
     z-index: 10;
 }
@@ -165,18 +180,17 @@ a {
     margin: 0 auto;
     left: 0;
     right: 0;
-    bottom: -110;
     width: var(--phone-image-width);
     height: auto;
     z-index: 100;
+    top: 79%;
 }
 
 /* Insights styles */
-
 .insights {
-    z-index: -1;
-    padding: 10rem 0 3rem 0;
+    padding: 10rem 0 4.481875rem 0;
     background: var(--ghost-white-color);
+    z-index: -1;
 }
 
 .insights__list {
@@ -193,7 +207,6 @@ a {
     counter-increment: insights-counter;
     justify-items: center;
     margin: 0 auto;
-
     margin-bottom: 3rem;
     position: relative;
 }
@@ -209,25 +222,37 @@ a {
     border-radius: 50%;
     justify-content: center;
     align-items: center;
+    font-weight: 600;
     color: var(--dark-purple-color);
-    border: 2px solid var(--davy-grey-color);
+    border: 1.5px solid var(--davy-grey-color);
 }
 
 .insights__heading {
     margin: 1.5rem 0 1rem 0;
 }
 
+.insights__paragraph {
+    font-weight: 400;
+}
 
-/* Offer styles */
+
+/* offer styles */
 .offer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    max-width: var(--offer-max-width-wrapper);
+    height: var(--offer-section-height);
+    margin: 6.268125rem auto;
+}
+
+.offer__wrapper {
     position: relative;
     background-color: var(--dark-purple-color);
     color: var(--white-color); 
-    height: var(--offer-section-height);
-    width: var(--offer-section-width);
+    width: var(--offer-box-width);
     margin: 0 auto;
     text-align: center;
-    margin-top: 20rem;
     padding: 2rem;
 }
 
@@ -243,6 +268,7 @@ a {
 
 .offer__paragraph {
     margin: 1rem 0 1.5rem 0;
+    font-weight: 400;
 }
 
 
@@ -250,9 +276,9 @@ a {
 .footer {
     display: flex;
     width: 100vw;
-    height: var(--footer-height);
     justify-content: center;
     align-items: center;
+    margin: 4.625rem 0 3.98625rem 0;
 }
 
 .footer__wrapper {
@@ -271,11 +297,105 @@ a {
     justify-content: space-between;
 }
 
+
+/* Tablet breakpoint */
+@media screen and (min-width: 48em) {
+    :root {
+        --header-max-width-wrapper: 43.0625rem;
+        --hero-max-width-wrapper: 25.4375rem;
+        --offer-max-width-wrapper: 43.0625rem;
+        --insights-max-width-wrapper: 30.8125rem;
+
+        --hero-section-height: 29.53125rem;
+        --offer-box-width: 32.125rem;
+
+        --offer-section-height: 32.875rem;
+
+        --phone-image-width: 32.125rem;
+
+        --list-item-multiplier: 4rem;
+
+        --heading-large-size: 3.75rem;
+
+        --heading-medium-size: 3rem;
+        --heading-medium-line: 1.167;
+    
+        --heading-small-size: 1.75rem;
+        --heading-small-line: 1.29;
+    
+        --paragraph-size: 1rem;
+        --paragraph-line: 1.75;
+
+        --link-size: 1rem;
+        --link-line: 2;
+    }
+
+    .hero {
+        padding: 3.5rem 0 0 0;
+    }
+    
+    .hero__image {
+        top: 70%;
+    }
+
+    .insights {
+        padding: 12rem 0 4.481875rem 2rem;
+    }
+
+    
+    .insights__list {
+        max-width: var(--insights-max-width-wrapper);
+        text-align: left;
+    }
+
+    .insights__item::before {
+        position: absolute;
+        left: calc(-1 * var(--list-item-multiplier) - 1rem);
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .offer {
+        margin: 6.25rem auto 0 auto;
+        align-items: flex-end;
+    }
+
+    .offer__wrapper {
+        text-align: left;
+        padding: 3rem 3.5rem 3.5rem 3.5rem;
+        margin: 0;
+    }
+
+    .offer__avatar {
+        left: -5%;
+        top: -43%;
+    }
+
+    .footer {
+        margin: 5rem 0 7.5625rem 0;
+    }
+}
+
+/* Desktop breakpoint */
 @media screen and (min-width: 90em) {
     :root {
+        --header-max-width-wrapper: 69.375rem;
+        --hero-max-width-wrapper: 39.6875rem;
+        --offer-max-width-wrapper: 69.375rem;
+        --insights-max-width-wrapper: 69.625rem;
+
+        --hero-section-height: 40rem;
+        --hero-wrapper-width: 39.6875rem;
+
+        
+        --phone-image-width: 47.9375rem;
+        
+        --offer-box-width: 45.625rem;
+        
+        --avatar-picture-width: 29.8125rem;
+        
         --heading-large-size: 5rem;
-        --heading-large-line: 1;
-    
+
         --heading-medium-size: 3.5rem;
         --heading-medium-line: 1.143;
     
@@ -283,22 +403,54 @@ a {
         --heading-small-line: 1.25;
     
         --paragraph-size: 1.125rem;
-        --paragraph-line: 1.8;
+        --paragraph-line: 1.78;
 
-        --link-size: 1rem;
-        --link-line: 2;
+        --link-size: 1.125rem;
+        --link-line: 1.78;
+    }
+
+    .hero {
+        padding: 3.4375rem 0 0 0;
+    }
+
+    .hero__image {
+        top: 60%;
+    }
+
+    .insights {
+        padding: 15rem 0 4.84375rem 0;
     }
 
     .insights__list {
-        text-align: left;
+        max-width: var(--insights-max-width-wrapper);
+        margin: 4rem auto;
+        text-align: center;
+        display: flex;
+    }
+
+    .insights__item {
+        flex-basis: 20rem;
     }
 
     .insights__item::before {
-        position: absolute;
-        padding-left: 40px;
-        left: calc(-1 * 4rem - 1rem);
-        top: 50%;
-        transform: translateY(-50%);
+        position: static;
+    }
+    
+    .offer {
+        margin: 18rem auto 0 auto;
+        align-items: flex-end;
     }
 
+    .offer__wrapper {
+        padding: 4rem; 
+    }
+
+    .offer__avatar {
+        left: -20%;
+        top: -80%;
+    }
+
+    .footer {
+        margin: 7.5625rem 0 6.875rem 0;
+    }
 }
