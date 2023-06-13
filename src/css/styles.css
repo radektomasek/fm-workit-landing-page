@@ -118,7 +118,6 @@ a {
 .hero__heading span {
     display: inline-block;
     border-bottom: 4px solid var(--eucalyptus-color);
-    
 }
 
 
@@ -152,19 +151,18 @@ a {
     overflow-x: clip;
 }
 
-/* .hero::after {
+.hero::after {
     content: "";
     display: block;
+    z-index: 0;
+    bottom: -20;
     position: absolute;
     background: var(--dark-purple-color);
     width: 100%;
-    height: 19.25rem;
-    left: 0;
-    bottom: 30;
+    height: 9rem;
     border-radius: 50%;
-    transform: scale(2);
-    z-index: 10;
-} */
+    transform: scale(1.3);
+}
 
 
 
