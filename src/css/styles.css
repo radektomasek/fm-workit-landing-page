@@ -81,13 +81,13 @@ h1 {
 }
 
 h2 {
-    font-size: var(--heading-medium-size);
-    line-height: var(--heading-medium-line);
+    font-size: var(--heading-small-size);
+    line-height: var(--heading-small-line);
 }
 
 h3 {
-    font-size: var(--heading-small-size);
-    line-height: var(--heading-small-line);
+    font-size: var(--heading-medium-size);
+    line-height: var(--heading-medium-line);
 }
 
 a {
@@ -138,7 +138,7 @@ a {
     justify-content: space-between;
     max-width: var(--header-max-width-wrapper);
     margin: 0 auto;
-    padding: 2rem 1rem 0 1rem;
+    padding: 3rem 1rem 0 1rem;
 
 }
 
