@@ -27,6 +27,8 @@
     --offer-box-width: 21.4375rem;
     --phone-image-width: 20rem;
     --avatar-picture-width: 17.65625rem;
+    --curved-shape-height: 4.5rem;
+    --delta-height: 1.5rem;
 
     --heading-large-size: 3.125rem;
     --heading-large-line: 1;
@@ -145,7 +147,7 @@ a {
     padding: 4rem 0 0 0;
     background-color: var(--dark-purple-color);
     color: var(--white-color);
-    height: var(--hero-section-height);
+    height: calc(var(--hero-section-height) - var(--delta-height));
     text-align: center;
     position: relative;
     overflow-x: clip;
@@ -159,11 +161,10 @@ a {
     position: absolute;
     background: var(--dark-purple-color);
     width: 100%;
-    height: 9rem;
+    height: var(--curved-shape-height);
     border-radius: 50%;
     transform: scale(1.3);
 }
-
 
 
 .hero__wrapper {
@@ -185,14 +186,29 @@ a {
     width: var(--phone-image-width);
     height: auto;
     z-index: 100;
-    top: 79%;
+    top: 85%;
 }
 
 /* Insights styles */
 .insights {
-    padding: 10rem 0 4.481875rem 0;
+    padding: 10rem 0 0.1rem 0;
     background: var(--ghost-white-color);
     z-index: -1;
+    position: relative;
+    overflow-x: clip;
+}
+
+.insights::after {
+    content: "";
+    display: block;
+    z-index: 0;
+    bottom: -20;
+    position: absolute;
+    background: var(--ghost-white-color);
+    width: 100%;
+    height: var(--curved-shape-height);
+    border-radius: 50%;
+    transform: scale(1.3);
 }
 
 .insights__list {
@@ -203,6 +219,8 @@ a {
     max-width: 350px;
     margin: 0 auto;
     text-align: center;
+    position: relative;
+    z-index: 10;
 }
 
 .insights__item {
@@ -245,7 +263,7 @@ a {
     justify-content: flex-end;
     max-width: var(--offer-max-width-wrapper);
     height: var(--offer-section-height);
-    margin: 6.268125rem auto;
+    margin: 8.268125rem auto;
 }
 
 .offer__wrapper {
@@ -299,6 +317,10 @@ a {
     justify-content: space-between;
 }
 
+.footer__social > *:hover {
+    filter: brightness(0) saturate(100%) invert(10%) sepia(17%) saturate(6386%) hue-rotate(251deg) brightness(95%) contrast(114%);
+}
+
 
 /* Tablet breakpoint */
 @media screen and (min-width: 48em) {
@@ -307,6 +329,7 @@ a {
         --hero-max-width-wrapper: 25.4375rem;
         --offer-max-width-wrapper: 43.0625rem;
         --insights-max-width-wrapper: 30.8125rem;
+        --curved-shape-height: 10rem;
 
         --hero-section-height: 29.53125rem;
         --offer-box-width: 32.125rem;
@@ -359,11 +382,11 @@ a {
     }
     
     .hero__image {
-        top: 70%;
+        top: 75%;
     }
 
     .insights {
-        padding: 12rem 0 4.481875rem 2rem;
+        padding: 14rem 0 1rem 2rem;
     }
 
     
@@ -380,7 +403,7 @@ a {
     }
 
     .offer {
-        margin: 6.25rem auto 0 auto;
+        margin: 9.25rem auto 0 auto;
         align-items: flex-end;
     }
 
@@ -420,6 +443,8 @@ a {
         --offer-max-width-wrapper: 69.375rem;
         --insights-max-width-wrapper: 69.625rem;
 
+        --curved-shape-height: 15rem;
+
         --hero-section-height: 40rem;
         --hero-wrapper-width: 39.6875rem;
 
@@ -450,11 +475,11 @@ a {
     }
 
     .hero__image {
-        top: 60%;
+        top: 65%;
     }
 
     .insights {
-        padding: 15rem 0 4.84375rem 0;
+        padding: 15rem 0 0.3rem 0;
     }
 
     .insights__list {
@@ -473,7 +498,7 @@ a {
     }
     
     .offer {
-        margin: 18rem auto 0 auto;
+        margin: 21rem auto 0 auto;
         align-items: flex-end;
     }
 
